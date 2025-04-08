@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>200 Motivos para te Amar</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('https://images.unsplash.com/photo-1501973801540-537f08ccae7b') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Segoe Script', cursive;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      height: 100vh;
+    }
+    .motivo {
+      font-size: 2em;
+      max-width: 80%;
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(255,255,255,0.2);
+    }
+    audio {
+      position: fixed;
+      bottom: 20px;
+      width: 90%;
+    }
+  </style>
+</head>
+<body>
+  <div class="motivo" id="motivo"></div>
+  <audio controls autoplay loop>
+    <source src="goosebumps.mp3" type="audio/mp3">
+    Seu navegador não suporta áudio.
+  </audio>
+  <script>
+    const motivos = [
+      "Eu te amo pelo seu sorriso que ilumina o meu dia.",
+      "Amo o jeito como você fala meu nome.",
+      "Eu me apaixono toda vez que te vejo rindo.",
+      "Te amo pelo seu olhar cheio de carinho.",
+      "Te amo porque você tem o dom de me acalmar só com a voz.",
+      "Amo o jeito que você se preocupa comigo.",
+      "Você me faz querer ser uma pessoa melhor.",
+      "Eu te amo porque você me entende até no silêncio.",
+      "Amo quando você me escuta com atenção, mesmo nas minhas bobeiras.",
+      "Você é minha paz no meio do caos.",
+      // Continue adicionando os 200 motivos aqui...
+    ];
+    let index = 0;
+    const div = document.getElementById("motivo");
+    function mostrarMotivo() {
+      div.textContent = motivos[index];
+      index = (index + 1) % motivos.length;
+    }
+    mostrarMotivo();
+    setInterval(mostrarMotivo, 5000);
+  </script>
+</body>
+</html>
